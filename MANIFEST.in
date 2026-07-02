@@ -1,0 +1,3 @@
+include README.md LICENSE
+recursive-include vectors *.json
+recursive-include js *.mjs
