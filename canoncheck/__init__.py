@@ -99,6 +99,8 @@ def _string(s: str) -> str:
     out = ['"']
     for ch in s:
         cp = ord(ch)
+        if 0xD800 <= cp <= 0xDFFF:
+            raise CanonError("lone surrogate is not valid Unicode")
         esc = _ESCAPES.get(cp)
         if esc is not None:
             out.append(esc)

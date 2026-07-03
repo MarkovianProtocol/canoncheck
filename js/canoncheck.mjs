@@ -24,6 +24,7 @@ function stringToken(s) {
   let out = '"';
   for (const ch of s) {
     const cp = ch.codePointAt(0);
+    if (cp >= 0xd800 && cp <= 0xdfff) throw new CanonError("lone surrogate is not valid Unicode");
     if (ESC[cp] !== undefined) out += ESC[cp];
     else if (cp < 0x20) out += "\\u" + cp.toString(16).padStart(4, "0");
     else out += ch;
