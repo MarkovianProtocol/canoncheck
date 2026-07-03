@@ -12,7 +12,8 @@ two against shared test vectors, including the adversarial cases that break naiv
 canonicalizers.
 
 ```
-pip install canoncheck
+pip install git+https://github.com/MarkovianProtocol/canoncheck
+# PyPI release coming soon: pip install canoncheck
 ```
 
 ## Why this exists
